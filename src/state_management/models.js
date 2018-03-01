@@ -5,9 +5,9 @@ const todoItems = {
   reducers: {
     addItem: (state, payload) => {
       let newState = state.slice();
-      newState.append(payload);
+      newState.push(payload);
       return newState;
-    },
+    }
     // completeItem: (state, payload) => state + payload.completed
   }
 };
@@ -16,6 +16,4 @@ const store = init({
   models: { todoItems }
 });
 
-export {
-  store
-}
+export { store };
