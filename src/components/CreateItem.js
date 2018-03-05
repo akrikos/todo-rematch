@@ -19,12 +19,13 @@ class CreateItem extends React.Component {
       <div>
         <form onSubmit={this.createItem}>
           <input
+            className="hxTextCtrl"
             type="text"
             name="todo-item"
             value={this.state.itemText}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Create" />
+          <button className="hxBtn hxPrimary">Create</button>
         </form>
       </div>
     );

@@ -1,12 +1,25 @@
 import * as React from "react";
 import * as ReactRedux from "react-redux";
 
+import "./ItemList.css";
+
 class ItemList extends React.Component {
   render() {
     return (
       <div className="todo-list">
-        <div className="list-header">Todo Items</div>
-        {this.listItems()}
+        <table className="hxTable hxHoverable">
+          <thead>
+            <tr>
+              <th className="hxControl">
+                <hx-checkbox />
+              </th>
+              <th >Item</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.listItems()}
+          </tbody>
+        </table>
       </div>
     );
   }
@@ -17,7 +30,16 @@ class ItemList extends React.Component {
     }
     return this.props.listItems.reduce((itemList, item, index) => {
       console.log(itemList, item, index);
-      itemList.push(<div key={index}>{item.text}</div>);
+      itemList.push(
+        <tr key={index}>
+          <td className="hxControl">
+            <hx-checkbox />
+          </td>
+          <td>
+            {item.text}
+          </td>
+        </tr>
+      );
       return itemList;
     }, []);
   }
@@ -33,7 +55,4 @@ const mapStateToProps = state => ({
 
 const ConnectedItemList = ReactRedux.connect(mapStateToProps)(ItemList);
 
-export {
-  ItemList,
-  ConnectedItemList
-}
+export { ItemList, ConnectedItemList };

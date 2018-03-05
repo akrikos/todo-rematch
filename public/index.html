@@ -19,13 +19,22 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link href="%PUBLIC_URL%/assets/helix-ui.css" rel="stylesheet" />
     <title>React App</title>
   </head>
-  <body>
+  <body class="hxHorizontal">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <header id="head">
+      <h1>TODONE APP.</h1>
+    </header>
+
+    <!-- React Injection Point -->
+    <div class="hxApp__container">
+      <main id="root" class="hxApp__content"></main>
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -36,5 +45,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <footer id="foot">© 2018 URMOM Inc.</footer>
+    <script src="%PUBLIC_URL%/assets/helix-ui.browser.js"></script>
   </body>
 </html>

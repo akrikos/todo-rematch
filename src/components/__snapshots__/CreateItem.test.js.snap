@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders create item form structure as expected 1`] = `
+<CreateItem
+  addItem={[Function]}
+/>
+`;
