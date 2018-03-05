@@ -22,7 +22,8 @@
     <link href="%PUBLIC_URL%/assets/helix-ui.css" rel="stylesheet" />
     <title>React App</title>
   </head>
-  <body class="hxHorizontal">
+
+  <body class="hxVertical">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
@@ -31,9 +32,11 @@
     </header>
 
     <!-- React Injection Point -->
-    <div class="hxApp__container">
+    <div class="hxApp__container" id="stage">
       <main id="root" class="hxApp__content"></main>
     </div>
+
+    <footer id="foot">© 2018 URMOM Inc.</footer>
 
     <!--
       This HTML file is a template.
@@ -45,7 +48,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <footer id="foot">© 2018 URMOM Inc.</footer>
+
     <script src="%PUBLIC_URL%/assets/helix-ui.browser.js"></script>
   </body>
 </html>

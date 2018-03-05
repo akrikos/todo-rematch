@@ -1,8 +1,6 @@
 import * as React from "react";
 import * as ReactRedux from "react-redux";
 
-import "./ItemList.css";
-
 class ItemList extends React.Component {
   render() {
     return (
@@ -13,12 +11,10 @@ class ItemList extends React.Component {
               <th className="hxControl">
                 <hx-checkbox />
               </th>
-              <th >Item</th>
+              <th>Item</th>
             </tr>
           </thead>
-          <tbody>
-            {this.listItems()}
-          </tbody>
+          <tbody>{this.listItems()}</tbody>
         </table>
       </div>
     );
@@ -35,9 +31,7 @@ class ItemList extends React.Component {
           <td className="hxControl">
             <hx-checkbox />
           </td>
-          <td>
-            {item.text}
-          </td>
+          <td>{item.text}</td>
         </tr>
       );
       return itemList;

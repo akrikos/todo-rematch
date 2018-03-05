@@ -13,3 +13,6 @@ hx-panel {
   border: 1px solid #aaa
 }
 
+.align-right {
+  text-align: right;
+}
