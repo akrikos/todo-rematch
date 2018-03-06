@@ -21,8 +21,8 @@ class ItemList extends React.Component {
   }
 
   listItems() {
-    if (!this.props.listItems) {
-      return "No todo items";
+    if (!this.props.listItems || this.props.listItems.length === 0) {
+      return (<tr><td colSpan="2">No todo items</td></tr>);
     }
     return this.props.listItems.reduce((itemList, item, index) => {
       console.log(itemList, item, index);

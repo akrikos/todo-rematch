@@ -1,54 +1,66 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="en"><!-- lang is necessary for screen reader compatibility -->
+<head>
+  <title>Vertical - App Title</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- CHANGE ME: update or remove -->
+  <base href="/helix-ui/" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link href="%PUBLIC_URL%/assets/helix-ui.css" rel="stylesheet" />
-    <title>React App</title>
-  </head>
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
-  <body class="hxVertical">
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <header id="head">
-      <h1>TODONE APP.</h1>
-    </header>
+  <!-- Helix Styles -->
+  <!-- FIXME: point to HelixUI styles in node_modules/helix-ui -->
+  <link href="%PUBLIC_URL%/assets/helix-ui.css" rel="stylesheet" />
 
-    <!-- React Injection Point -->
-    <div class="hxApp__container" id="stage">
-      <main id="root" class="hxApp__content"></main>
-    </div>
+  <!-- FIXME: Add your application styles here! -->
 
-    <footer id="foot">© 2018 URMOM Inc.</footer>
+  <!-- FIXME: point to loader in node_modules/@webcomponents/webcomponentsjs -->
+  <script src="https://2d2bf231b82dfe76fe36-fa12562cfe810d69bedcc36a0ac289ef.ssl.cf1.rackcdn.com/javascript/webcomponents-loader.js"></script>
+</head>
+<body class="hxVertical" id="top">
+  <header id="head">
+    <!-- Eyebrow Goes Here -->
+  </header>
 
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <!-- React Injection Point -->
+  <div id="stage">
+    <main id="root" role="main"></main>
+  </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <footer id="foot">
+&copy; 2018 Rackspace US, Inc.
+<nav>
+  <a href="https://www.rackspace.com/information/legal/websiteterms">Website Terms</a>
+  <a href="https://www.rackspace.com/information/legal/privacystatement">Privacy Policy</a>
+</nav>
+  </footer>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+  <!-- Browser polyfills (mainly for IE) -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
-    <script src="%PUBLIC_URL%/assets/helix-ui.browser.js"></script>
-  </body>
+  <!-- intelligently load ES5 Adapter (if needed) -->
+  <span id="ce-es5-adapter">
+    <script>
+      if (!window.customElements) {
+        var elAdapter = document.querySelector('#ce-es5-adapter');
+        elAdapter.parentElement.removeChild(elAdapter);
+      }
+    </script>
+    <!-- FIXME: point to adapter in node_modules/@webcomponents/webcomponentsjs -->
+    <script src="https://2d2bf231b82dfe76fe36-fa12562cfe810d69bedcc36a0ac289ef.ssl.cf1.rackcdn.com/javascript/custom-elements-es5-adapter.js"></script>
+  </span>
+
+  <script src="%PUBLIC_URL%/assets/helix-ui.browser.js"></script>
+
+  <a id="bottom"></a>
+
+  <!-- FIXME: Add your application logic here! -->
+</body>
 </html>

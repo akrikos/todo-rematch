@@ -13,6 +13,13 @@ hx-panel {
   border: 1px solid #aaa
 }
 
+/* required for the grid to work properly */
+main {
+  width: 100%;
+}
+
 .align-right {
   text-align: right;
 }
+
+
